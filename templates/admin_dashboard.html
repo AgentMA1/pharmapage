@@ -1,0 +1,91 @@
+UNUSED,NOT IMPLEMENTED.
+SOME FEATURES HAVE BEEN TEMPORARILY IMPLEMENTED AS MANAGEMENT.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a href="#user-management">User Management</a></li>
+            <li><a href="#special-products">Special Products</a></li>
+            <li><a href="#catalogue-management">Catalogue Management</a></li>
+        </ul>
+    </nav>
+
+    <section id="user-management">
+        <h2>User Management</h2>
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user['username'] }}</td>
+                <td>{{ user['role'] }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('manage_users') }}">
+                        <input type="hidden" name="user_id" value="{{ user['id'] }}">
+                        <button type="submit" name="action" value="delete">Delete</button>
+                        <button type="submit" name="action" value="edit">Edit</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+    <section id="special-products">
+        <h2>Special Products</h2>
+        <form method="POST" action="{{ url_for('manage_special_products') }}">
+            <input type="text" name="name" placeholder="Product Name" required>
+            <input type="text" name="description" placeholder="Description" required>
+            <button type="submit" name="action" value="add">Add Special Product</button>
+        </form>
+        <ul>
+            {% for product in special_products %}
+            <li>
+                {{ product['name'] }}
+                <form method="POST" action="{{ url_for('manage_special_products') }}">
+                    <input type="hidden" name="product_id" value="{{ product['id'] }}">
+                    <button type="submit" name="action" value="delete">Delete</button>
+                    <button type="submit" name="action" value="edit">Edit</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="catalogue-management">
+        <h2>Catalogue Management</h2>
+        <form method="POST" action="{{ url_for('manage_catalogue') }}">
+            <input type="text" name="name" placeholder="Item Name" required>
+            <input type="text" name="description" placeholder="Description" required>
+            <button type="submit" name="action" value="add">Add Item</button>
+        </form>
+        <ul>
+            {% for item in catalogue_items %}
+            <li>
+                {{ item['name'] }}
+                <form method="POST" action="{{ url_for('manage_catalogue') }}">
+                    <input type="hidden" name="catalogue_id" value="{{ item['id'] }}">
+                    <button type="submit" name="action" value="delete">Delete</button>
+                    <button type="submit" name="action" value="edit">Edit</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+</body>
+</html>

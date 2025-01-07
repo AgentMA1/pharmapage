@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEO Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ceo.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the CEO Page</h1>
+    </header>
+    <main>
+        <p>Our CEO, Larry is a bright one.</p>
+
+        <!-- Image placed between paragraphs -->
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='assets/ceo.png') }}" alt="CEO Image">
+        </div>
+
+        <p>With a complete lack of morals and principles and intelligent perception of international law, he has built this company and made the profits skyrocket</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Cherika Pharmaceuticals</p>
+    </footer>
+</body>
+</html>

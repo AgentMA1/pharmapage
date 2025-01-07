@@ -1,0 +1,102 @@
+/* General body styling for consistency */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for login and register forms */
+.form-container {
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Header text */
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input fields styling */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Input field focus effect */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+.form-container button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Button hover effect */
+.form-container button:hover {
+    background: #0056b3;
+}
+
+/* Links for navigation */
+.form-container a {
+    display: block;
+    margin-top: 15px;
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Error and success message styling */
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.message.success {
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}

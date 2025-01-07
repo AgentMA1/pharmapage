@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Results Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background-color: #6a0dad;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .main-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #6a0dad;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        strong {
+            color: #6a0dad;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6a0dad;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #520a8b;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cherika Pharmaceuticals</h1>
+    </header>
+
+    <div class="main-content">
+        <h2>No Results Found</h2>
+        <p>Sorry, no items matching "<strong>{{ query }}</strong>" were found in the catalogue. Please try searching with a different term.</p>
+        <a href="/catalogue">Go back to catalogue</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Cherika Pharmaceuticals</p>
+    </footer>
+</body>
+</html>

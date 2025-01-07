@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue</title>
+    <link rel="stylesheet" href="/static/catalogue.css">
+</head>
+<body>
+    <header>
+        <h1>Catalogue</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Search Bar -->
+        <form method="GET" action="/catalogue/search" class="search-bar">
+            <input 
+                type="text" 
+                name="q" 
+                placeholder="Search catalogue..." 
+                value="{{ query if query else '' }}">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Search Results or No Results Message -->
+        {% if query %}
+            <p class="search-info">Search results for: <strong>{{ query }}</strong></p>
+        {% endif %}
+
+        <!-- Product Catalogue List -->
+        <section class="product-list">
+            {% if items %}
+                {% for item in items %}
+                    <div class="product-item">
+                        <h2>{{ item['name'] }}</h2> <!-- Product Name -->
+                        <p>{{ item['description'] }}</p> <!-- Product Description -->
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-items">No catalogue items found.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cherika Pharmaceuticals</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{% extends "special_product.html" %}
+
+{% block content %}
+    <div class="product-detail">
+        <img src="{{ product[3] }}" alt="{{ product[1] }}" class="product-image">
+        <h2>{{ product[1] }}</h2>
+        <p>{{ product[2] }}</p>
+    </div>
+{% endblock %}

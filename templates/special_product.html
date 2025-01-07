@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='catalog.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Special Product</h1>
+    </header>
+
+    <main>
+        {% block content %} 
+        <!-- Dynamic content will be injected here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Special Products</p>
+    </footer>
+</body>
+</html>

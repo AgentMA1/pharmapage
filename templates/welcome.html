@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='helper.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Central Content -->
+        <div class="content-wrapper">
+            <div class="text-side left">
+                <p>Welcome to the official page of Cherika Pharmaceuticals!</p>
+            </div>
+            <div class="center-image">
+                <!-- Corrected image path using url_for -->
+                <img src="{{ url_for('static', filename='assets/cherika_pharmaceuticals.jpg') }}" alt="Central Image">
+            </div>
+            <div class="text-side right">
+                <p>Feel free to check our latest trends! Or, log in to check our usual catalogue.</p>
+            </div>
+        </div>
+
+        <!-- Top Right Slider -->
+        <div class="slider top-right" id="registerSlider">
+            <div class="slider-content">
+                <h3>Get Started</h3>
+                <a href="{{ url_for('register') }}" class="action-btn">Register</a>
+                <a href="{{ url_for('login') }}" class="action-btn">Login</a>
+            </div>
+            <button class="slider-toggle" onclick="toggleSlider('registerSlider')">↘</button>
+        </div>
+
+        <!-- Top Left Slider -->
+        <div class="slider top-left" id="specialProductsSlider">
+            <div class="slider-content">
+                <h3>Special Products</h3>
+                <!-- Link to /special_product -->
+                <a href="{{ url_for('special_product') }}" class="action-btn">View Specials</a>
+            </div>
+            <button class="slider-toggle" onclick="toggleSlider('specialProductsSlider')">↙</button>
+        </div>
+
+        <!-- Bottom Center Slider -->
+        <div class="bottom-center-slider">
+            <ul>
+                <li><a href="{{ url_for('ceo') }}">CEO</a></li>
+                <li><a href="{{ url_for('employees') }}">Employees</a></li>
+                <li><a href="{{ url_for('legal_information') }}">Legal Information</a></li>
+                <li><a href="{{ url_for('locator') }}">Locator</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleSlider(sliderId) {
+            const slider = document.getElementById(sliderId);
+            slider.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

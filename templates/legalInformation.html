@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Disclaimer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='legalhelp.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Legal Disclaimer</h1>
+        <p>
+            The information provided on this website is for general informational purposes only. It is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified healthcare provider with any questions you may have regarding a medical condition.
+        </p>
+        <p>
+            This pharmaceutical company makes no representations or warranties about the accuracy, reliability, or completeness of the information on this site. The use of this website is at your own risk.
+        </p>
+        <p>
+            <span class="notice">Important:</span> Products mentioned on this website may not be available in all regions and may be subject to regulatory approval. Please consult local laws and guidelines for product availability and restrictions in your area.
+        </p>
+        <p>
+            The company disclaims all liability for damages of any kind arising from the use, reference to, or reliance on any information contained within the site. Links to external sites are provided as a convenience and do not constitute an endorsement of their content.
+        </p>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='assets/lawsuitprevention.jpg') }}" alt="lawsuitprevention">
+        </div>
+    </div>
+</body>
+</html>

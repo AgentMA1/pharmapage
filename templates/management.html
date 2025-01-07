@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Management</title>
+</head>
+<body>
+    <header>
+        <h1>Catalogue Management</h1>
+    </header>
+
+    <main>
+        <h2>Add New Catalogue Item</h2>
+        <form action="{{ url_for('management') }}" method="POST">
+            <input type="text" name="name" placeholder="Item Name" required>
+            <textarea name="description" placeholder="Item Description" required></textarea>
+            <button type="submit" name="action" value="create">Add Item</button>
+        </form>
+
+        <h2>Catalogue Items</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>
+                    <!-- Update item -->
+                    <form action="{{ url_for('management') }}" method="POST" style="display:inline;">
+                        <input type="hidden" name="item_id" value="{{ item[0] }}">
+                        <input type="text" name="name" value="{{ item[1] }}" placeholder="New Name" required>
+                        <textarea name="description" placeholder="New Description" required>{{ item[2] }}</textarea>
+                        <button type="submit" name="action" value="update">Update</button>
+                    </form>
+
+                    <!-- Delete item -->
+                    <form action="{{ url_for('management') }}" method="POST" style="display:inline;">
+                        <input type="hidden" name="item_id" value="{{ item[0] }}">
+                        <button type="submit" name="action" value="delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cherika Pharmaceuticals</p>
+    </footer>
+</body>
+</html>

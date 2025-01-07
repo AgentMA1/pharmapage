@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Catalogue{% endblock %}</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cherika Pharmaceuticals</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Content specific to each page will be inserted here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cherika Pharmaceuticals</p>
+    </footer>
+</body>
+</html>

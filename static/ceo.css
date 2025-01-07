@@ -1,0 +1,89 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #222;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+main p {
+    font-size: 1.2rem;
+    color: #ccc;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.image-container img {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #111;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    .image-container img {
+        width: 80%;
+    }
+}

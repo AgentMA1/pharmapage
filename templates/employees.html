@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.webp') }}" type="image/webp">
+    <link rel="icon" href="{{ url_for('static', filename='assets/favicon.png') }}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Employees</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='employees.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Our Team</h1>
+    </header>
+    <main>
+        <p>Our employees are the backbone of our success. Here's a glimpse of our incredible team:</p>
+        <div class="employee-slider">
+            <div class="employee-image-container">
+                <!-- Image and Name will be dynamically injected here -->
+                <img src="" alt="Employee Image" class="employee-image">
+                <span class="employee-name"></span>
+            </div>
+        </div>
+    </main>
+    <script>
+        const images = [
+            { src: "{{ url_for('static', filename='assets/john.jpg') }}", name: "John" },
+            { src: "{{ url_for('static', filename='assets/fuckyouguy.jpg') }}", name: "F.Guy" },
+            { src: "{{ url_for('static', filename='assets/dentistfuckyouguy.png') }}", name: "F.Dent Guy" },
+            { src: "{{ url_for('static', filename='assets/john.health.jpg') }}", name: "John Health" },
+        ];
+
+        let currentIndex = 0;
+        const imageElement = document.querySelector('.employee-image');
+        const nameElement = document.querySelector('.employee-name');
+
+        // Set the first employee image and name on page load
+        imageElement.src = images[currentIndex].src;
+        nameElement.textContent = images[currentIndex].name;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            imageElement.src = images[currentIndex].src;
+            nameElement.textContent = images[currentIndex].name;
+        }
+
+        setInterval(changeImage, 5000);
+    </script>
+</body>
+</html>
