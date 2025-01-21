@@ -1,0 +1,4 @@
+Pip
+Flask
+Flask-wtf
+SQLAlchemy
