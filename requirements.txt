@@ -2,3 +2,5 @@ Pip
 Flask
 Flask-wtf
 SQLAlchemy
+gunicorn
+mysqlclient
